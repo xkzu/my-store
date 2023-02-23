@@ -32,7 +32,7 @@ build/
 ### VS Code ###
 .vscode/
 
-### Others ###
+### Maven ###
 .mvn
 mvnw
 mvnw.cmd
