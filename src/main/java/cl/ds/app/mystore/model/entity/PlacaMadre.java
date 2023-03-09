@@ -12,18 +12,18 @@ public class PlacaMadre {
 
     private String memorias;
 
-    private String foramto;
+    private String formato;
 
     private String fabricante;
 
     public PlacaMadre() {
     }
 
-    public PlacaMadre(String socket, String chipset, String memorias, String foramto, String fabricante) {
+    public PlacaMadre(String socket, String chipset, String memorias, String formato, String fabricante) {
         this.socket = socket;
         this.chipset = chipset;
         this.memorias = memorias;
-        this.foramto = foramto;
+        this.formato = formato;
         this.fabricante = fabricante;
     }
 }
