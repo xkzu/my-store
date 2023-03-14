@@ -14,6 +14,11 @@ public class CoolerCpuHelper {
     public static void main(String[] args) {
         agregarCooler(crearCoolerCpuConstructorVacio());
         agregarCooler(crearCoolerCpuConstructorConParametros());
+        agregarCooler(crearCoolerCpuConstructorVacio());
+        agregarCooler(crearCoolerCpuConstructorVacio());
+        agregarCooler(crearCoolerCpuConstructorVacio());
+        agregarCooler(crearCoolerCpuConstructorVacio());
+        agregarCooler(crearCoolerCpuConstructorVacio2());
         System.out.println(coolerCpuList);
         eliminarCoolerPorId("2");
         System.out.println("--------------------------------------------");
@@ -23,6 +28,20 @@ public class CoolerCpuHelper {
     private static CoolerCpu crearCoolerCpuConstructorVacio() {
         coolerCpu = new CoolerCpu();
         coolerCpu.setId("1");
+        coolerCpu.setAltura("1.5");
+        coolerCpu.setFabricante("Asus");
+        coolerCpu.setPeso("31");
+        coolerCpu.setRgb("No");
+        coolerCpu.setRpm("2200");
+        coolerCpu.setTipo("Agua");
+        coolerCpu.setRuido("22");
+        coolerCpu.setFlujoDeAire("55");
+        return coolerCpu;
+    }
+
+    private static CoolerCpu crearCoolerCpuConstructorVacio2() {
+        coolerCpu = new CoolerCpu();
+        coolerCpu.setId("6");
         coolerCpu.setAltura("1.5");
         coolerCpu.setFabricante("Asus");
         coolerCpu.setPeso("31");
@@ -55,14 +74,20 @@ public class CoolerCpuHelper {
     }
 
     private static boolean existeId(String id) {
+        boolean esVlido = false;
         System.out.println("existe??? " + coolerCpu.getId());
         System.out.println("existe??? " + coolerCpu.getId().equals(id));
-        if (!coolerCpuList.contains(coolerCpu.getId().equals(id))) {
-            System.out.println("No existe");
-            return false;
+
+        System.out.println("coolerCpu.getId() " + coolerCpu.getId());
+        for (CoolerCpu culer: coolerCpuList) {
+            System.out.println("culer " + culer);
+            if (culer.getId().equals(id)) {
+                System.out.println("lo encontre!!");
+                esVlido = true;
+                break;
+            }
         }
-        System.out.println("Si existe");
-        return true;
+        return esVlido;
     }
 
     //TODO modificar el metodo para poder eliminar a traves del objeto y no por index
@@ -75,9 +100,11 @@ public class CoolerCpuHelper {
         }
         System.out.println(id);
         int idConvertido = Integer.parseInt(id);
-        System.out.println(idConvertido);
+        System.out.println("idConvertido " + idConvertido);
         System.out.println("largo lista " + coolerCpuList.size());
 
+        System.out.println("coolerCpu "+ coolerCpu);
+        //TODO aca hay un error
         coolerCpuList.remove(coolerCpu);
         System.out.println("largo lista " + coolerCpuList.size());
     }
