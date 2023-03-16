@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class Gpu {
 
+    private String id;
+
     private String modelo;
 
     private String memoria;
@@ -20,7 +22,8 @@ public class Gpu {
     public Gpu() {
     }
 
-    public Gpu(String modelo, String memoria, String frecuenciaCore, String frecuenciaMemorias, String bus, String fabricante) {
+    public Gpu(String id, String modelo, String memoria, String frecuenciaCore, String frecuenciaMemorias, String bus, String fabricante) {
+        this.id = id;
         this.modelo = modelo;
         this.memoria = memoria;
         this.frecuenciaCore = frecuenciaCore;
