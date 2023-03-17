@@ -1,10 +1,10 @@
 package cl.ds.app.mystore.helper;
 
+import cl.ds.app.mystore.model.entity.CoolerCpu;
 import cl.ds.app.mystore.model.entity.PlacaMadre;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.ParameterList;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PlacaMadreHelper {
 
@@ -20,8 +20,10 @@ public class PlacaMadreHelper {
         addPlacaMadre(crearPlacaMadre2());
         addPlacaMadre(crearPlacaMadre3());//no lo añade porque ya existe
         System.out.println(placaMadreList);
-    removePlacaMadre(crearPlacaMadre2());
+    //removePlacaMadre(crearPlacaMadre2());
     System.out.println(placaMadreList);
+        removeById("2");
+        System.out.println(placaMadreList);
      }
 
      //Constructor vacío
@@ -74,4 +76,37 @@ public class PlacaMadreHelper {
         return placaMadreList;
     }
     //existe por ID
-}
+
+    private static boolean existeId(String id) {
+        boolean esVlido = false;
+        System.out.println("existe??? " + placaMadre.getId());
+        System.out.println("existe??? " + placaMadre.getId().equals(id));
+
+        System.out.println("placa.getId() " + placaMadre.getId());
+        for (PlacaMadre placa: placaMadreList) {
+            System.out.println("placa " + placa);
+            if (placa.getId().equals(id)) {
+                System.out.println("lo encontre!!");
+
+                esVlido = true;
+                break;
+            }
+        }
+        return esVlido;
+    }
+
+    private static void removeById(String id) {
+        Optional placaMadreOpt = placaMadreList.stream()
+                .filter(placaMadre -> placaMadre.getId().equals(id))
+                .findFirst();
+        if (placaMadreOpt.isPresent()) {
+            placaMadreList.remove(placaMadreOpt.get());
+            System.out.println("largo lista " + placaMadreList.size());
+        } else {
+            System.out.println("No se encuentra la placa madre");
+        }
+    }
+
+
+    }
+
