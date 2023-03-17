@@ -22,7 +22,7 @@ public class PlacaMadreHelper {
         System.out.println(placaMadreList);
     //removePlacaMadre(crearPlacaMadre2());
     System.out.println(placaMadreList);
-        removeById("2");
+        removeById("1");
         System.out.println(placaMadreList);
      }
 
@@ -102,8 +102,9 @@ public class PlacaMadreHelper {
         if (placaMadreOpt.isPresent()) {
             placaMadreList.remove(placaMadreOpt.get());
             System.out.println("largo lista " + placaMadreList.size());
+            System.out.println("La placa con ID " + id + " fue eliminada");
         } else {
-            System.out.println("No se encuentra la placa madre");
+            System.out.println("No se encuentra la placa madre, intente con otro ID");
         }
     }
 
