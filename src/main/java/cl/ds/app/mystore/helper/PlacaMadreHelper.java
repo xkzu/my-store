@@ -26,8 +26,6 @@ public class PlacaMadreHelper {
         System.out.println(placaMadreList);
         eliminarPlacaPorId("1");
         System.out.println(placaMadreList);
-        eliminarPlacaMadrePorId("2");
-        System.out.println(placaMadreList);
     }
 
     //Constructor vacío
@@ -120,16 +118,5 @@ public class PlacaMadreHelper {
             }
         }
     }
-
-    //Eliminar por Id versión 3
-    private static void eliminarPlacaMadrePorId(String id) {
-        boolean existeId = existeId(id);
-        if (existeId) {
-            placaMadreList.removeIf(placa -> placa.getId().equals(id));
-            System.out.println("La placa con ID " + id + " fue eliminada");
-        }else{
-            System.out.println("No se encuentra la placa madre con el ID ingresado");
-        }
-    }
-
 }
+
