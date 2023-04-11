@@ -128,7 +128,6 @@ public class GpuHelper {
 
 
                                 /*PORQUE KZARKA ES MI AMIGO QUE ME ILUMINO CON SU MALDAD HIZO QUE ESTA MIERDA FUNCIONE*/
-                                                                /*COMO LA SUFRI LPM*/
 
     private static boolean existeId(String id) {
         boolean esVlido = false;
